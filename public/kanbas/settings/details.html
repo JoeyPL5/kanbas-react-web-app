@@ -1,0 +1,112 @@
+<table width="75%">
+    <tr vl=linetop>   
+        <td>
+            <ul id="navlist">
+                <li><a href="#">Account</a></li>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="../home.html">Courses</a></li>
+                <li><a href="#">Calendar</a></li>
+                <li><a href="#">Inbox</a></li>
+                <li><a href="#">History</a></li>
+                <li><a href="#">Studio</a></li>
+                <li><a href="#">Commons</a></li>
+                <li><a href="#">Help</a></li>
+             </ul>
+        </td>
+        <td>
+            <ul id="homelist">
+                <li><a href="../home.html#homeinfo">Home</a></li>
+                <li><a href="#">Modules</a></li>
+                <li><a href="#">Piazza</a></li>
+                <li><a href="#">Zoom Meetings</a></li>
+                <li><a href="../assignments/index.html">Assignments</a></li>
+                <li><a href="#">Quizzes</a></li>
+                <li><a href="../grades.html">Grades</a></li>
+                <li><a href="#">People</a></li>
+                <li><a href="#">Panopto Video</a></li>
+                <li><a href="#">Discussions</a></li>
+                <li><a href="#">Announcements</a></li>
+                <li><a href="#">Pages</a></li>
+                <li><a href="#">Files</a></li>
+                <li><a href="#">Rubrics</a></li>
+                <li><a href="#">Outcomes</a></li>
+                <li><a href="#">Collaborations</a></li>
+                <li><a href="#">Syllabus</a></li>
+                <li><a href="navigation.html">Settings</a></li>
+             </ul>
+        </td>
+        <td id="coursedetails">
+            <h1>Course Details</h1>
+            <b>Image:</b><button>Choose Image</button><br>
+            <b>Name:</b> CS4500<br>
+            <b>Course Code:</b> CS4500<br>
+            <b>Time Zone:</b> 
+            <select>
+                <option>EST</option>
+            </select><br>
+            <b>Participation</b>
+            <select>
+                <option>
+                    Term
+                </option>
+            </select><br>
+            <b>Start</b><br>
+            <input type="date"
+                  value=""/><br>
+            <b>End</b><br>
+            <input type="date"
+                value=""/><br><br>
+            <input type="checkbox" value="Restrict"
+            id="restrict"/>
+            <label for="restrict">Restrict Students from viewing course before term start date</label><br>
+            <input type="checkbox" value="Restrict 2"
+            id="restrict2"/>
+            <label for="fileupload">Restrict Students from viewing course after term end date</label><br>
+            <h4>Default Due Time:</h4>
+            <option>
+                <select>Account Default (11:59pm)</select><br>
+            </option>
+            <h4>Language</h4>
+            <option>
+                <select>Not Set (User-configurable, defaults to English)</select><br>
+            </option><br>
+            <b>File Storage:</b> 10000 megabytes<br>
+            <b>Large Course:</b>
+            <input type="checkbox" 
+            id="launchspeed"/>
+            <label for="launchspeed">Launch SpeedGrader Filtered by Student Group</label><br>
+            <b>Grading Scheme:</b>
+            <input type="checkbox" 
+            id="grading"/>
+            <label for="grading">Enable course grading scheme</label><br>
+            <b>License:</b>
+            <select>
+                <option>
+                    Private (Copyrighted)
+                </option>
+            </select><br>
+            <b>File Copyright:</b>
+            <input type="checkbox" 
+            id="copyright"/>
+            <label for="grading">Copyright and license information must be provided</label><br>
+            <b>Visibility:</b> If you need to make your course public please contact support
+            <br><select>
+                <option disabled>
+                    Course
+                </option>
+            </select><br>
+            <b>Format:</b>
+            <select><option>On-Campus</option></select><br>
+            <b>Mastery Paths:</b>
+            <input type="checkbox" 
+            id="mastery"/>
+            <label for="mastery">Enable individual learning paths</label><br>
+            <b>Description:</b>
+            <textarea rows="5" cols="30"></textarea>
+            <button>Update Course Details</button>
+
+
+        </td>
+        
+    </tr>
+</table>
