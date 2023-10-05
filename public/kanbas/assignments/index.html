@@ -1,87 +1,80 @@
-<table width="75%">
-    <tr vl=linetop>   
-        <td>
-            <ul id="navlist">
-                <li><a href="../profile/index.html">Account</a></li>
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="../home.html">Courses</a></li>
-                <li><a href="#">Calendar</a></li>
-                <li><a href="#">Inbox</a></li>
-                <li><a href="#">History</a></li>
-                <li><a href="#">Studio</a></li>
-                <li><a href="#">Commons</a></li>
-                <li><a href="#">Help</a></li>
-             </ul>
-        </td>
-        <td>
-            <ul id="homelist">
-                <li><a href="../home.html#homeinfo">Home</a></li>
-                <li><a href="#">Modules</a></li>
-                <li><a href="#">Piazza</a></li>
-                <li><a href="#">Zoom Meetings</a></li>
-                <li><a href="#index.html">Assignments</a></li>
-                <li><a href="#">Quizzes</a></li>
-                <li><a href="../grades.html">Grades</a></li>
-                <li><a href="#">People</a></li>
-                <li><a href="#">Panopto Video</a></li>
-                <li><a href="#">Discussions</a></li>
-                <li><a href="#">Announcements</a></li>
-                <li><a href="#">Pages</a></li>
-                <li><a href="#">Files</a></li>
-                <li><a href="#">Rubrics</a></li>
-                <li><a href="#">Outcomes</a></li>
-                <li><a href="#">Collaborations</a></li>
-                <li><a href="#">Syllabus</a></li>
-                <li><a href="#">Settings</a></li>
-             </ul>
-        </td>
-        <td>
-            <table>
-                <tr>
-                    <td>
-                        <form>
-                            <textarea rows="1" cols="20">Search for assignments</textarea>
-                        </form>
-                    </td>
-                    <td>
-                        <button>Group</button>
-                    </td>
-                    <td>
-                        <button>Assignment</button>
-                    </td>
-                    <td>
-                        <select>
-                            <option>Edit Assignment Date</option>
-                        </select>
-                    </td>
-                </tr>
-            </table>
-            <h2>ASSIGNMENTS 40% of Total Grade <select><option>Edit</option></select></h2>
-            <ul>
-                <li><a href="edit.html">A1 - ENV + HTML</a> <br> <a href="#">Multiple Modules</a> | Not Available Yet</li>
-                <li><a href="edit.html">A2 - CSS + BOOTSTRAP</a> <br> <a href="#">Multiple Modules</a> | Not Available Yet</li>
-                <li><a href="edit.html">A3 - JS + REACT</a> <br> <a href="#">Multiple Modules</a> | Not Available Yet</li>
-                <li><a href="edit.html">A4 - STATE + REDUX</a> <br> <a href="#">Multiple Modules</a>> | Not Available Yet</li>
-                <li><a href="edit.html">A5 - NODE + SESSION</a> <br> <a href="#">Multiple Modules</a> | Not Available Yet</li>
-                <li><a href="edit.html">A6 - MONGO + MONGOOSE</a> <br> <a href="#">Multiple Modules</a> | Not Available Yet</li>
-            </ul>
-            <h2>QUIZZES 10% of Total <select><option>Edit</option></select></h2>
-            <ul>
-                <li><a href="edit.html">Q1 - ENV + HTML </a> <br> <a href="#">Multiple Modules</a> | Not Available Yet</li>
-                <li><a href="edit.html">Q2 - CSS + BOOTSTRAP </a> <br> <a href="#">Multiple Modules</a> | Not Available Yet</li>
-                <li><a href="edit.html">Q3 - JS + REACT</a> <br> <a href="#">Multiple Modules</a> | Not Available Yet</li>
-                <li><a href="edit.html">Q4 - STATE + REDUX</a> <br> <a href="#">Multiple Modules</a> | Not Available Yet</li>
-                <li><a href="edit.html">Q5 - NODE + SESSION</a> <br> <a href="#">Multiple Modules</a> | Not Available Yet</li>
-            </ul>
-            <h2>EXAMS 20% of Total <select><option>Edit</option></select></h2>
-            <ul>
-                <li><a href="edit.html">Midterm</a> <br> <a href="#">Multiple Modules</a></a> | Not Available Yet</li>
-                <li><a href="edit.html">Final</a> <br> <a href="#">Multiple Modules</a> | Not Available Yet</li>
-            </ul>
-            <h2>PROJECT 30% of Total <select><option>Edit</option></select></h2>
-            <ul>
-                <li><a href="edit.html">Project</a> <br> <a href="#">Multiple Modules</a> | Not Available Yet</li>
-            </ul>
-        </td>
-    </tr>
-</table>
+<head>
+    <!-- <link href="../../vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet"/> -->
+    <link href="index.css" rel="stylesheet" />
+    <link href="../../vendors/fontawesome/css/all.css" rel="stylesheet"/>
+</head>
+
+
+<div class="container">
+    <div class="row justify-content-start">
+        <div class="col-md-3 col-2 wd-bg-color-black text-center" style="font-size: 14px; width: 85px">
+            <img src="../../images/NU_logo.png" alt="Description of image" width="80" height="80">
+            <div class="col-4 col-md-12 mb-3">
+                <div class="wd-bg-color-white label label-primary text-center" 
+                style="background-color: white; display: inline-block; padding: 5px;">
+                    <i class="fa fa-user" style="color: rgb(154, 154, 154);"></i>
+                    <br>
+                    <a href="../profile/index.html" style="color: red;">Account</a>
+                </div>
+            </div> 
+            <div class="col-4 col-md-12 mb-3">
+                <i class="fa fa-list" style="color: red;"></i><br>
+                <a href="#" class="wd-fg-color-white">Dashboard</a>
+            </div><br>
+            <div class="col-4 col-md-12 mb-3">
+                <i class="fa fa-book" style="color: red;"></i><br>
+                <a href="../home.html" class="wd-fg-color-white">Courses</a>
+            </div>
+            <div class="col-4 col-md-12 mb-3">
+                <i class="fa fa-calendar" style="color: red;"></i><br>
+                <a href="#" class="wd-fg-color-white">Calendar</a>
+            </div>
+            <div class="col-4 col-md-12 mb-3">
+                <i class="fa fa-inbox" style="color: red;"></i><br>
+                <a href="#" class="wd-fg-color-white">Inbox</a>
+            </div>
+            <div class="col-4 col-md-12 mb-3">
+                <i class="fa fa-history" style="color: red;"></i><br>
+                <a href="#" class="wd-fg-color-white">History</a>
+            </div>
+            <div class="col-4 col-md-12 mb-3">
+                <i class="fa fa-laptop" style="color: red;"></i><br>
+                <a href="#" class="wd-fg-color-white">Studio</a>
+            </div>
+            <div class="col-4 col-md-12 mb-3">
+                <i class="fa fa-arrow-right" style="color: red;"></i><br>
+                <a href="#" class="wd-fg-color-white">Commons</a>
+            </div><br>
+            <div class="col-4 col-md-12 mb-3"> 
+                <i class="fa fa-question" style="color: red;"></i><br>
+                <a href="#" class="wd-fg-color-white">Help</a>
+            </div>
+        </div>
+        <div class="col-md-3" style="font-size: 14px; width: 200">
+            <div style="margin-top: 100px; margin-left: 25px"><a href="#" class="wd-fg-color-red">Notifications</a></div>
+            <div style="border-left: 2px solid black; padding-left: 8px; margin-top: 15px;  margin-left: 25px">
+                <div><a href="#" class="wd-fg-color-black">Profile</a></div>
+            </div>
+            <div style="margin-top: 15px; margin-left: 25px"><a href="#" class="wd-fg-color-red account-nav-spacing">Files</a></div>
+            <div style="margin-top: 15px; margin-left: 25px"><a href="#" class="wd-fg-color-red account-nav-spacing">Settings</a></div>
+            <div style="margin-top: 15px; margin-left: 25px"><a href="#" class="wd-fg-color-red">ePortfolios</a></div>
+            <div style="margin-top: 15px; margin-left: 25px"><a href="#" class="wd-fg-color-red">Shared Content</a></div>
+            <div style="margin-top: 15px; margin-left: 25px"><a href="#" class="wd-fg-color-red">The Hub</a></div>
+            <div style="margin-top: 15px; margin-left: 25px"><a href="#" class="wd-fg-color-red">Qwickly Course Tools</a></div>
+            <div style="margin-top: 15px; margin-left: 25px"><a href="#" class="wd-fg-color-red">Global Announcements</a></div>
+        </div>
+        <div class="col-md-6">
+            <a href="../profile/edit.html" class="btn btn-sm wd-bg-color-gray" style="margin-left:500px; margin-top: 50px;">Edit Profile</a>
+            <div><i class="fa fa-user fa-6x" style="color: gray"></i></div>
+            <div style="margin-bottom: 40px"><h1 style="font-weight: normal;">Jose Annunziato</h1></div>
+            <div><h2 style="font-weight: normal;">Contact</h2></div>
+            <p class="wd-fg-color-black" style="margin-bottom: 40px"> No registered services, you can add some on the <a href="#" class="wd-fg-color-red">settings</a> page.</p>
+            <div><h2 style="font-weight: normal;">Biography</h2></div>
+            <p class="wd-fg-color-black" style="margin-bottom: 40px">Faculty, Software Engineer, AI, Space, and renewables enthusiast.</p>
+            <div><h2 style="font-weight: normal;">Links</h2></div>
+            <p class="wd-fg-color-black">
+                <i class="fa fa-link" style = "color: gray;"></i>
+                <a href="https://www.youtube.com/@WebDevTV/videos" class="wd-fg-color-red">Youtube</a></p>
+        </div>
+    </div>
+</div>
