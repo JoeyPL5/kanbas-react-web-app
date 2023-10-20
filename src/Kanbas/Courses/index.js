@@ -5,6 +5,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Modules from "./Modules";
 import Home from "./Home";
 import Assignments from "./Assignments";
+import Grades from "../Grades";
 import AssignmentEditor from "./Assignments/AssignmentEditor";
 
 function Courses() {
@@ -32,7 +33,7 @@ function Courses() {
               path="Assignments/:assignmentId"
               element={<AssignmentEditor />}
             />
-            <Route path="Grades" element={<h1>Grades</h1>} />
+            <Route path="Grades" element={<Grades />} />
           </Routes>
         </div>
       </div>

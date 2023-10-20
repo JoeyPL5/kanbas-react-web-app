@@ -1,27 +1,19 @@
+import { Link, useLocation } from "react-router-dom";
 function KanbasNavigation() {
-  const links = [
-    { href: "/Kanbas/Account/Profile/screen.html", text: "Account" },
-    { href: "/Kanbas/Dashboard/screen.html", text: "Dashboard" },
-    { href: "/Kanbas/Courses/Home/screen.html", text: "Courses" },
-    { href: "#", text: "Calendar", icon: "fa-regular fa-calendar" },
-  ];
-
-  return `
-<ul class="wd-kanbas-navigator">
-  ${links
-    .map(
-      (link) => `
-  <li>
-    <a href="${link.href}">
-      ${link.text}
-    </a>
-  </li>
-  `
-    )
-    .join("")}
-
-</ul>
-`;
+  const links = ["Account", "Dashboard", "Courses", "Calendar"];
+  const { pathname } = useLocation();
+  return (
+    <div className="list-group" style={{ width: 150 }}>
+      {links.map((link, index) => (
+        <Link
+          key={index}
+          to={`/Kanbas/${link}`}
+          className={`list-group-item ${pathname.includes(link) && "active"}`}>
+          {link}
+        </Link>
+      ))}
+    </div>
+  );
 }
-
 export default KanbasNavigation;
+
