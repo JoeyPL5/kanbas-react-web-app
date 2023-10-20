@@ -1,0 +1,35 @@
+.wd-bg-color-black {
+    background-color: black;
+ }
+ 
+ .wd-bg-color-white {
+    background-color: white;
+ } 
+
+ .wd-bg-color-gray {
+   background-color: gray
+} 
+
+ .wd-bg-color-yellow {
+   background-color: yellow;
+} 
+
+.wd-bg-color-red {
+  background-color: red;
+} 
+
+ .wd-fg-color-white {
+   color: white;
+ }
+
+ .wd-fg-color-black {
+   color: black;
+ }
+
+ .wd-fg-color-red {
+   color: red;
+ }
+
+ a {
+   text-decoration: none;;
+ }
