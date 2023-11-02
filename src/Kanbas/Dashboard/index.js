@@ -1,37 +1,34 @@
-import React, { useEffect, useState } from "react";
+import { React, useState } from "react";
 import { Link } from "react-router-dom";
-import "./index.css";
-import CourseCard from "./CourseCard";
-import data from "../Database"; 
-
+import db from "../Database";
 function Dashboard() {
-  const { courses } = data;
-
+  const [courses, setCourses] = useState(db.courses);
+  
+  const course = {
+    name: "New Course",      number: "New Number",
+    startDate: "2023-09-10", endDate: "2023-12-15",
+  };
+  const addNewCourse = () => {
+    setCourses([...courses,
+              { ...course,
+                _id: new Date().getTime() }]);
+  };
   return (
-    <div className="container">
-      <div className="row justify-content-start">
-        <div className="col-md-9">
-          <h1 className="black-title">
-            <span style={{ fontWeight: "normal" }}>Dashboard</span>
-          </h1>
-          <hr />
-          <h2 className="black-title">
-            <span style={{ fontWeight: "normal", marginLeft: "25px" }}>
-              Published Courses ({courses.length})
-            </span>
-          </h2>
-          <hr style={{ marginLeft: "25px" }} />
-          <div className="d-flex flex-row flex-wrap" style={{ marginLeft: "25px" }}>
-            {courses.map((course) => (
-              <Link to={`/Kanbas/Courses/${course._id}`} key={course._id}>
-                <CourseCard course={course} />
-              </Link>
-            ))}
+    <div>
+      <h1>Dashboard</h1>
+      <button onClick={addNewCourse} >
+        Add
+      </button>
+      <div className="list-group">
+        {courses.map((course) => ({courses.map((course) => (
+          <div key={course._id} className="list-group-item">
+            <h3>{course.name}</h3>
+            <p>Course Number: {course.number}</p>
+            <p>Start Date: {course.startDate}</p>
+            <p>End Date: {course.endDate}</p>
           </div>
-        </div>
+        ))}))}
       </div>
     </div>
   );
 }
-
-export default Dashboard;
