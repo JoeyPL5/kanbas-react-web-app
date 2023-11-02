@@ -8,9 +8,19 @@ import Assignments from "./Assignments";
 import Grades from "../Grades";
 import AssignmentEditor from "./Assignments/AssignmentEditor";
 
-function Courses() {
+function Courses({ courses }) {
   const { courseId } = useParams();
-  const course = db.courses.find((course) => course._id === courseId);
+  if (!courses || courses.length === 0) {
+    // Handle the case where courses data is not available or empty.
+    return <div>Loading...</div>; // or display an error message
+  }
+
+  const course = courses.find((course) => course._id === courseId);
+
+  if (!course) {
+    // Handle the case where the course with courseId is not found.
+    return <div>Course not found</div>; // or display an error message
+  }
   return (
     <div>
       <h1>Course {course.name}</h1>
