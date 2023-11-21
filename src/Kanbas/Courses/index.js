@@ -8,22 +8,25 @@ import Assignments from "../Assignments";
 import AssignmentEditor from "../Assignments/AssignmentEditor";
 import * as service from "../service";
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 function Courses() {
   const { courseId } = useParams();
   // const course = db.courses.find((course) => course._id === courseId);
   // const course = courses.find((course) => course._id === courseId);
-  const [course, setCourse] = useState({
-    name: "New Course",
-  });
-  const fetchCourseById = async (courseId) => {
-    const course = await service.fetchCourseById(courseId);
-    setCourse(course);
+  const URL = "http://localhost:4000/api/courses";
+  const [course, setCourse] = useState({});
+  const findCourseById = async (courseId) => {
+    const response = await axios.get(
+      `${URL}/${courseId}`
+    );
+    setCourse(response.data);
   };
 
   useEffect(() => {
-    fetchCourseById(courseId);
+    findCourseById(courseId);
   }, [courseId]);
+
 
   return (
     <div>

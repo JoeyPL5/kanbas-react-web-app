@@ -10,6 +10,7 @@ import {
   setModules,
 } from "./modulesReducer";
 import * as client from "./client";
+import { findModulesForCourse, createModule } from "./client";
 
 function ModuleList() {
   const { courseId } = useParams();
@@ -17,24 +18,24 @@ function ModuleList() {
   const module = useSelector((state) => state.modulesReducer.module);
   const dispatch = useDispatch();
 
-  const fetchModulesForCourse = async (courseId) => {
+  const findModulesForCourse = async (courseId) => {
     const modules = await client.findModulesForCourse(courseId);
     dispatch(setModules(modules));
   };
 
-  useEffect(() => {
-    fetchModulesForCourse(courseId);
-  }, [courseId]);
-
-  const handleAddModule = async (module) => {
-    try {
-      const newModule = await client.createModule(courseId, module);
-      dispatch(addModule(newModule));
-      dispatch(setModule({ name: "", description: "" }));
-    } catch (error) {
-      console.log(error);
-    }
+  const handleAddModule = () => {
+    createModule(courseId, module).then((module) => {
+      dispatch(addModule(module));
+    });
   };
+
+  
+  useEffect(() => {
+    findModulesForCourse(courseId)
+      .then((modules) =>
+        dispatch(setModules(modules))
+    );
+  }, [courseId]);
 
   const handleDeleteModule = async (moduleId) => {
     try {

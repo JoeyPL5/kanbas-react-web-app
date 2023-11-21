@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import store from "./store";
 import { Provider } from "react-redux";
 import * as service from "./service";
+import axios from "axios";
 
 function Kanbas() {
   const [courses, setCourses] = useState([]);
@@ -15,6 +16,15 @@ function Kanbas() {
     startDate: new Date(),
     endDate: new Date(),
   });
+  const URL = "http://localhost:4000/api/courses";
+  const findAllCourses = async () => {
+    const response = await axios.get(URL);
+    setCourses(response.data);
+  };
+  useEffect(() => {
+    findAllCourses();
+  }, []);
+
 
   const init = async () => {
     const courses = await service.fetchCourses();
@@ -26,41 +36,35 @@ function Kanbas() {
   }, []);
 
   const addCourse = async () => {
-    try {
-      const newCourse = await service.addCourse(course);
-      setCourses([newCourse, ...courses]);
-      // setCourses([
-      //   { ...course, _id: new Date().getTime().toString() },
-      //   ...courses,
-      // ]);
-      setCourse({ name: "" });
-    } catch (error) {
-      console.log(error);
-    }
+    const response = await axios.post(URL, course);
+    setCourses([
+      response.data,
+      ...courses,
+    ]);
+    setCourse({ name: "" });
   };
   const deleteCourse = async (course) => {
-    try {
-      await service.deleteCourse(course);
-      setCourses(courses.filter((c) => c._id !== course._id));
-    } catch (error) {
-      console.log(error);
-    }
+    const response = await axios.delete(
+      `${URL}/${course._id}`
+    );
+    setCourses(courses.filter(
+      (c) => c._id !== course._id));
   };
+
   const updateCourse = async (course) => {
-    try {
-      await service.updateCourse(course);
-      setCourses(
-        courses.map((c) => {
-          if (c._id === course._id) {
-            return course;
-          }
-          return c;
-        })
-      );
-      setCourse({ name: "" });
-    } catch (error) {
-      console.log(error);
-    }
+    const response = await axios.put(
+      `${URL}/${course._id}`,
+      course
+    );
+    setCourses(
+      courses.map((c) => {
+        if (c._id === course._id) {
+          return course;
+        }
+        return c;
+      })
+    );
+    setCourse({ name: "" });
   };
 
   return (
