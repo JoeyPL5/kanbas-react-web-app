@@ -12,6 +12,9 @@ function App() {
     <HashRouter>
       <div>
         <div className="list-group">
+          <Link className="list-group-item" to="/project">
+            Project
+          </Link>
           <Link className="list-group-item" to="/Labs">
             Labs
           </Link>
